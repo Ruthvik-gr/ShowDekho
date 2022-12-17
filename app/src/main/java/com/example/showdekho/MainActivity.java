@@ -1,6 +1,7 @@
 package com.example.showdekho;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
@@ -13,15 +14,32 @@ public class MainActivity extends AppCompatActivity {
     EditText username, password, repassword;
     Button btnsignup, btnsignin;
     DbHelper myDB;
+    private static final boolean PREFS_NAME = true;
+    SharedPreferences sharedPreferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_main);
+        /*SharedPreferences settings = getSharedPreferences(String.valueOf(PREFS_NAME), MODE_PRIVATE);
+        boolean loggedIn = settings.getBoolean("logged", true);
+        if (loggedIn) {
+            // Toast.makeText(this,"you are logged in !!",3000).show();
+    *//* Intent i = new Intent(this,Login.class);
+     startActivity(i);*//*
+            Intent intent = new
+                    Intent(this, HomeActivity.class);
+            startActivity(intent);
+        } else {
+            // Toast.makeText(this,"you are not logged in !!",3000).show();
+            Intent intent = new
+                    Intent(this, MainActivity.class);
+            startActivity(intent);
+        }*/
         username = findViewById(R.id.username);
         password = findViewById(R.id.password);
         repassword = findViewById(R.id.repassword);
-
         btnsignup = findViewById(R.id.btnsignup);
         btnsignin = findViewById(R.id.btnsignin);
 
@@ -57,6 +75,7 @@ public class MainActivity extends AppCompatActivity {
         btnsignin.setOnClickListener(v -> {
             Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
             startActivity(intent);
+            finish();
         });
     }
 }
