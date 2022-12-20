@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Organizer"
+    tools:ignore="SpeakableTextPresentCheck">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+       <!-- <ImageView
+            android:id="@+id/img"
+            android:layout_width="match_parent"
+            android:layout_height="200sp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="20sp"
+            android:layout_marginTop="39dp"
+            android:layout_marginRight="20sp" />
+
+        <Button
+            android:id="@+id/uplimg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/img"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:backgroundTint="@color/black"
+            android:text="Upload Image"
+            android:textColor="@color/white"/>-->
+
+        <TextView
+            android:id="@+id/movnam"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20sp"
+            android:layout_marginTop="20sp"
+            android:text="@string/moviename"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/ipmovnam"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/movnam"
+            android:layout_marginStart="20sp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="10sp"
+            android:hint="movie name"
+            android:inputType="text"
+            android:textColorHint="#78909C"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ipmovnam"
+            android:layout_marginStart="20sp"
+            android:layout_marginTop="20sp"
+            android:text="@string/time"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/iptime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/time"
+            android:layout_marginStart="20sp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="10sp"
+            android:hint="Enter show timing"
+            android:inputType="text"
+            android:textColorHint="#78909C"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/loc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/iptime"
+            android:layout_marginStart="20sp"
+            android:layout_marginTop="20sp"
+            android:text="@string/location"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/iploc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/loc"
+            android:layout_marginStart="20sp"
+            android:layout_marginTop="2dp"
+            android:layout_marginEnd="10sp"
+            android:hint="Theater and location name"
+            android:inputType="text"
+            android:textColorHint="#78909C"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/iploc"
+            android:layout_marginLeft="20sp"
+            android:layout_marginTop="20sp"
+            android:text="@string/price"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/ipprice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/price"
+            android:layout_marginStart="20sp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="10sp"
+            android:hint="ex: 200rs"
+            android:inputType="text"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/lang"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ipprice"
+            android:layout_marginStart="20sp"
+            android:layout_marginTop="20dp"
+            android:text="@string/lang"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/iplang"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/lang"
+            android:layout_marginStart="20sp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="10sp"
+            android:hint="ex: Kannada"
+            android:inputType="text"
+            android:textColorHint="#78909C"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/genre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/iplang"
+            android:layout_marginStart="20sp"
+            android:layout_marginTop="20dp"
+            android:text="@string/genre"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/ipgenre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/genre"
+            android:layout_marginStart="20sp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="10sp"
+            android:hint="ex: Thriller"
+            android:inputType="text"
+            android:textSize="20sp" />
+
+        <Button
+
+            android:id="@+id/btnsubmit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ipgenre"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:backgroundTint="@color/black"
+            android:text="submit"
+            android:textColor="@color/white" />
+
+    </RelativeLayout>
+</ScrollView>

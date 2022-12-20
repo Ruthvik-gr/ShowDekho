@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">ShowDekho</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="moviename">Enter Movie Name?</string>
+    <string name="time">Enter Show Time</string>
+    <string name="location">Enter Movie Theater and Location Name</string>
+    <string name="price">Enter the ticket Price</string>
+    <string name="lang">Movie language</string>
+    <string name="genre">Enter mvie Genre</string>
+
+</resources>
