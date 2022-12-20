@@ -9,22 +9,18 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.util.ArrayList;
+import com.example.showdekho.model.Movie;
+
+import java.util.List;
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
-    private Context context;
-    TextView MovieName_id, ShowTime_id, Location_id, Amount_id, Language_id, Genre_id;
-    private ArrayList MovieName, ShowTime, Location, Amount, Language, Genre;
+    private final Context context;
+    private final List<Movie> moviesList;
 
 
-    public MyAdapter(Context context, ArrayList movieName, ArrayList showTime, ArrayList location, ArrayList amount, ArrayList language, ArrayList genre) {
+    public MyAdapter(Context context, List<Movie> moviesList) {
         this.context = context;
-        MovieName = movieName;
-        ShowTime = showTime;
-        Location = location;
-        Amount = amount;
-        Language = language;
-        Genre = genre;
+        this.moviesList = moviesList;
     }
 
     @NonNull
@@ -36,20 +32,19 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        //holder.MovieName_id.setText(MovieName_id[position]);
-        holder.MovieName_id.setText(String.valueOf(MovieName_id.get(position)));
-        holder.ShowTime_id.setText(String.valueOf(ShowTime_id.get(position)));
-        holder.Location_id.setText(String.valueOf(Location_id.get(position)));
-        holder.Amount_id.setText(String.valueOf(Amount_id.get(position)));
-        holder.Language_id.setText(String.valueOf(Language_id.get(position)));
-        holder.Genre_id.setText(String.valueOf(Genre_id.get(position)));
+        holder.MovieName_id.setText(moviesList.get(position).getName());
+        holder.ShowTime_id.setText(moviesList.get(position).getTime());
+        holder.Location_id.setText(moviesList.get(position).getLocation());
+        holder.Amount_id.setText(moviesList.get(position).getPrice());
+        holder.Language_id.setText(moviesList.get(position).getLanguage());
+        holder.Genre_id.setText(moviesList.get(position).getGenere());
 
 
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return moviesList.size();
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {

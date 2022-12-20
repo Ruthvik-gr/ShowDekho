@@ -43,7 +43,7 @@ public class Organizer extends AppCompatActivity {
                     boolean regmovie = db.insertmovie(moviename, time, location, price, language, genre);
                     if (regmovie) {
                         Toast.makeText(Organizer.this, "Your Show Added Successfully", Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
+                        Intent intent = new Intent(getApplicationContext(), UserList.class);
                         startActivity(intent);
                     } else {
                         Toast.makeText(Organizer.this, "Unable to list your show", Toast.LENGTH_SHORT).show();

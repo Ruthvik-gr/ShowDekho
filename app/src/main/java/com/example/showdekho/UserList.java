@@ -1,21 +1,27 @@
 package com.example.showdekho;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.showdekho.model.Movie;
+
 import java.util.ArrayList;
+import java.util.List;
 
 public class UserList extends AppCompatActivity {
     RecyclerView recyclerView;
-    ArrayList<String> MovieName, ShowTime, Location, Amount, Language, Genre;
+    List<Movie> moviesList = new ArrayList<>();
     DbHelper db;
     DbOrg dbOrg;
     MyAdapter adapter;
+    ImageButton plus;
 
     @Override
 
@@ -23,33 +29,42 @@ public class UserList extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_list);
         db = new DbHelper(this);
-        MovieName = new ArrayList<>();
-        ShowTime = new ArrayList<>();
-        Location = new ArrayList<>();
-        Amount = new ArrayList<>();
-        Language = new ArrayList<>();
-        Genre = new ArrayList<>();
+
+        getData();
+
         recyclerView = findViewById(R.id.recyclerview);
-        adapter = new MyAdapter(this, MovieName, ShowTime, Location, Amount, Language, Genre);
+        adapter = new MyAdapter(this, moviesList);
         recyclerView.setAdapter((adapter));
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        displaydata();
+
+        plus = findViewById(R.id.org);
+
+        plus.setOnClickListener(v -> {
+            Intent intent = new Intent(getApplicationContext(), Organizer.class);
+            startActivity(intent);
+        });
     }
 
-    private void displaydata() {
+    private void getData() {
+        dbOrg = new DbOrg(this);
         Cursor cursor = dbOrg.getdata();
         if (cursor.getColumnCount() == 0) {
             Toast.makeText(this, "NO ENTRY EXIST", Toast.LENGTH_SHORT).show();
             return;
         } else {
             while (cursor.moveToNext()) {
-                MovieName.add(cursor.getString(0));
-                ShowTime.add(cursor.getString(1));
-                Location.add(cursor.getString(2));
-                Amount.add(cursor.getString(3));
-                Language.add(cursor.getString(4));
-                Genre.add(cursor.getString(5));
+                Movie movie = new Movie();
+//                movie.setName(cursor.getColumnIndex("movieName"));
+                movie.setName(cursor.getString(0));
+                movie.setTime(cursor.getString(1));
+                movie.setLocation(cursor.getString(2));
+                movie.setPrice(cursor.getString(3));
+                movie.setLanguage(cursor.getString(4));
+                movie.setGenere(cursor.getString(5));
+                moviesList.add(movie);
+
             }
         }
+        cursor.close();
     }
 }
