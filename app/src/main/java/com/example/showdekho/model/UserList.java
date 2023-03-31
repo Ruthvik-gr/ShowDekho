@@ -1,8 +1,10 @@
-package com.example.showdekho;
+package com.example.showdekho.model;
 
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
@@ -10,7 +12,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.showdekho.R;
+import com.example.showdekho.model.DbHelper;
+import com.example.showdekho.model.DbOrg;
 import com.example.showdekho.model.Movie;
+import com.example.showdekho.model.MyAdapter;
+import com.example.showdekho.model.Organizer;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,6 +37,7 @@ public class UserList extends AppCompatActivity {
         setContentView(R.layout.activity_user_list);
         db = new DbHelper(this);
 
+
         getData();
 
         recyclerView = findViewById(R.id.recyclerview);
@@ -45,7 +53,7 @@ public class UserList extends AppCompatActivity {
         });
     }
 
-    private void getData() {
+    public void getData() {
         dbOrg = new DbOrg(this);
         Cursor cursor = dbOrg.getdata();
         if (cursor.getColumnCount() == 0) {

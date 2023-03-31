@@ -1,4 +1,4 @@
-package com.example.showdekho;
+package com.example.showdekho.model;
 
 import android.content.ContentValues;
 import android.content.Context;

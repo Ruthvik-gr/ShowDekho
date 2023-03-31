@@ -1,4 +1,4 @@
-package com.example.showdekho;
+package com.example.showdekho.model;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,17 +8,13 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.showdekho.R;
+
 public class MainActivity extends AppCompatActivity {
 
     EditText username, password, repassword;
     Button btnsignup, btnsignin;
     DbHelper myDB;
-//    SharedPreferences sharedPreferences;
-//
-//    private static final String shared_pref_name = "mypref";
-//    private static final String key_name = "name";
-//    private static final String key_pass = "pass";
-//    private static final String key_repass = "repass";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,20 +28,9 @@ public class MainActivity extends AppCompatActivity {
         btnsignup = findViewById(R.id.btnsignup);
         btnsignin = findViewById(R.id.btnsignin);
 
-//        sharedPreferences = getSharedPreferences(shared_pref_name, MODE_PRIVATE);
-//        String name = sharedPreferences.getString(key_name, null);
-//        if (name != null) {
-//            Intent intent = new Intent(MainActivity.this, HomeActivity.class);
-//            startActivity(intent);
-//        }
 
         myDB = new DbHelper(this);
         btnsignup.setOnClickListener(v -> {
-//            SharedPreferences.Editor editor = sharedPreferences.edit();
-//            editor.putString(key_name, username.getText().toString());
-//            editor.putString(key_pass, password.getText().toString());
-//            editor.putString(key_repass, repassword.getText().toString());
-//            editor.apply();
             String user = username.getText().toString();
             String pass = password.getText().toString();
             String repass = repassword.getText().toString();
@@ -78,5 +63,6 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
             finish();
         });
+
     }
 }

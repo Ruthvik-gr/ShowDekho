@@ -1,4 +1,4 @@
-package com.example.showdekho;
+package com.example.showdekho.model;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -13,7 +13,7 @@ public class DbOrg extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("create table MovieList (MovieName text primary key,Time text,Location text,Price text,Language text,Genre text)");
+        db.execSQL("create table MovieList (MovieName text primary key,Time text,Location text,Price int,Language text,Genre text)");
     }
 
     @Override

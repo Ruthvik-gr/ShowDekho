@@ -13,7 +13,14 @@
         android:theme="@style/Theme.ShowDekho"
         tools:targetApi="31">
         <activity
-            android:name=".UserList"
+            android:name=".Billing_page"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".model.UserList"
             android:exported="false"
             android:label="Movie List">
             <meta-data
@@ -21,7 +28,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".Organizer"
+            android:name=".model.Organizer"
             android:exported="false"
             android:label="Add Show">
             <meta-data
@@ -29,7 +36,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".LoginActivity"
+            android:name=".model.LoginActivity"
             android:exported="false"
             android:label="Login">
             <meta-data
@@ -37,7 +44,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".model.MainActivity"
             android:exported="true"
             android:label="Register">
             <intent-filter>

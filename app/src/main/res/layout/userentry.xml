@@ -1,168 +1,220 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/card"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="16dp"
     android:backgroundTint="#efefef"
+    android:clickable="true"
     app:cardCornerRadius="16dp"
     app:cardElevation="12dp">
 
     <LinearLayout
+        android:id="@+id/parentlinear"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
+        android:layout_margin="10dp"
         android:orientation="vertical">
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
             android:orientation="horizontal">
 
-            <TextView
-                style="bold"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:text="Movie Name :"
-                android:textColor="@color/black"
-                android:textSize="24dp" />
-
-            <TextView
-                android:id="@+id/mname"
-                style="bold"
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:text=" "
-                android:textColor="@color/black"
-                android:textSize="24dp" />
+                android:layout_gravity="center_vertical"
+                android:orientation="vertical">
+
+                <TextView
+                    style="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="22dp"
+                    android:text="Movie Name :"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+
+                <TextView
+                    style="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Show Time :"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+
+                <TextView
+                    style="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Location :"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+
+                <TextView
+                    style="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Amount :"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+
+                <TextView
+                    style="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Language :"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+
+                <TextView
+                    style="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Genre :"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="No Of Seats :"
+                    android:textColor="@color/black" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/decrement"
+                        android:layout_width="40dp"
+                        android:layout_height="match_parent"
+                        android:backgroundTint="@color/black"
+                        android:text="-"
+                        android:textColor="@color/white" />
+
+                    <TextView
+                        android:id="@+id/totp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginEnd="5dp"
+                        android:text="0"
+                        android:textColor="@color/black"
+                        android:textSize="35dp" />
+
+                    <Button
+                        android:id="@+id/increment"
+                        android:layout_width="40sp"
+                        android:layout_height="match_parent"
+                        android:backgroundTint="@color/black"
+                        android:text="+"
+                        android:textColor="@color/white" />
+
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/mname"
+                    style="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" "
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/stime"
+                    style="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" "
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/loca"
+                    style="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" "
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/amnt"
+                    style="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" "
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/lan"
+                    style="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" "
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/Genre"
+                    style="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" "
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center"
+                    android:text="Total price :"
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:id="@+id/totprice"
+                    style="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text=" "
+                    android:textColor="@color/black"
+                    android:textSize="35dp" />
+
+            </LinearLayout>
+
+
         </LinearLayout>
 
-        <LinearLayout
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="enter mail address" />
+
+        <Button
+            android:id="@+id/book"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:orientation="horizontal">
-
-            <TextView
-                style="bold"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Show Time :"
-                android:textColor="@color/black"
-                android:textSize="24dp" />
-
-            <TextView
-                android:id="@+id/stime"
-                style="bold"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:text=" "
-                android:textColor="@color/black"
-                android:textSize="24dp" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:orientation="horizontal">
-
-            <TextView
-                style="bold"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Location :"
-                android:textColor="@color/black"
-                android:textSize="24dp" />
-
-            <TextView
-                android:id="@+id/loca"
-                style="bold"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:text=" "
-                android:textColor="@color/black"
-                android:textSize="24dp" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:orientation="horizontal">
-
-            <TextView
-                style="bold"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Amount :"
-                android:textColor="@color/black"
-                android:textSize="24dp" />
-
-            <TextView
-                android:id="@+id/amnt"
-                style="bold"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:text=" "
-                android:textColor="@color/black"
-                android:textSize="24dp" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:orientation="horizontal">
-
-            <TextView
-                style="bold"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Language :"
-                android:textColor="@color/black"
-                android:textSize="24dp" />
-
-            <TextView
-                android:id="@+id/lan"
-                style="bold"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:text=" "
-                android:textColor="@color/black"
-                android:textSize="24dp" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:orientation="horizontal">
-
-            <TextView
-                style="bold"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Genre :"
-                android:textColor="@color/black"
-                android:textSize="24dp" />
-
-            <TextView
-                android:id="@+id/Genre"
-                style="bold"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:text=" "
-                android:textColor="@color/black"
-                android:textSize="24dp" />
-        </LinearLayout>
+            android:layout_gravity="center"
+            android:backgroundTint="@color/black"
+            android:text="Book now"
+            android:textColor="@color/white" />
     </LinearLayout>
-
 </androidx.cardview.widget.CardView>
